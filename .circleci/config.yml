@@ -30,9 +30,9 @@ jobs:
       - run:
           name: install dependencies
           command: |
-            python3 -m venv venv
-            . venv/bin/activate
-            pip install -r requirements.txt
+#            python3 -m venv venv
+#            . venv/bin/activate
+#            pip install -r requirements.txt
 
       - save_cache:
           paths:
@@ -40,12 +40,12 @@ jobs:
           key: v1-dependencies-{{ checksum "requirements.txt" }}
         
       # run tests!
-      - run:
-          name: run tests
-          command: |
-            . venv/bin/activate
-            python manage.py test
-
-      - store_artifacts:
-          path: test-reports
-          destination: test-reports
+#      - run:
+#          name: run tests
+#          command: |
+#            . venv/bin/activate
+#            python manage.py test
+#
+#      - store_artifacts:
+#          path: test-reports
+#          destination: test-reports
